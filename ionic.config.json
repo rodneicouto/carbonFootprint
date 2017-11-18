@@ -2,5 +2,7 @@
   "name": "carbonFootprint",
   "app_id": "dd83fc3c",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

@@ -1,14 +1,26 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Carboon Footprint
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>    
+  <ion-searchbar  [(ngModel)]="searchStr" placeholder="Search for food"></ion-searchbar>
+  <ion-list> 
+      <ion-item *ngFor="let item of (items | myFilter: searchStr : ['name'])">
+          <h2>{{item.userPresentable()}}</h2>
+          <!-- <button ion-button item-end></button> -->
+          <ion-icon class="add-icon" name="add-circle" item-end (click)="addFood(item)"></ion-icon>
+      </ion-item>
+  </ion-list>
 </ion-content>
+
+<ion-footer>
+
+    <ion-toolbar>
+        <button ion-button (click)="showTotal()">See Total</button>
+    </ion-toolbar>
+    
+</ion-footer>

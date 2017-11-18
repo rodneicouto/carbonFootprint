@@ -1,3 +1,10 @@
 page-home {
+    ion-footer > ion-toolbar {
+        padding-left: 16px;
+    }
+    .add-icon {
+        color: green;
+        cursor: pointer;
+    }
 
 }
