@@ -2,4 +2,14 @@ page-total {
     .remove-icon{
         color: red;
     }
+
+    table {
+        width: 40%;
+    }
+
+    @media screen and (min-width: 768px) {
+        table {
+            width: 30%;
+        }
+    }
 }

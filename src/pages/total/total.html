@@ -11,7 +11,7 @@
       </ion-title>
       <ion-buttons start>
         <button ion-button (click)="dismiss()">
-          <span ion-text color="primary" showWhen="ios">Close</span>
+          <span ion-text color="primary" hideWhen="android,windows">Close</span>
           <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
         </button>
       </ion-buttons>
@@ -21,9 +21,13 @@
 
 <ion-content padding>
 
-    <div style="margin-top: 15px">
+    <!-- <div style="margin-top: 15px">
       <h1>Total: {{total}} g/co2</h1>
-    </div>
+    </div> -->
+
+    <progress-bar [progress]="round(total)"></progress-bar>
+
+
     <br>
     <ion-list *ngIf="total > 0">
         <ion-list-header>
@@ -32,10 +36,21 @@
         <ion-item *ngFor="let item of items">
             <h2>{{item.userPresentable()}}</h2>
             <h3>{{item.gramsUserPresentable(item.$qtd)}}</h3>
-            <h3>{{item.co2ForGrams(item.$qtd)}} g/co2 </h3>
+            <h3>{{round(item.co2ForGrams(item.$qtd))}} g/co2 </h3>
             <ion-icon class="remove-icon" name="remove-circle" item-end (click)="remove(item)"></ion-icon>
         </ion-item>
      
       </ion-list>
+      <div>
+          <table height="100%" align="center" valign="center">
+          <tr><td>
+              <img src="assets/img/bad.png" *ngIf="total > 70" >
+              <img src="assets/img/excellent.png"  *ngIf="total < 35.5 && total > 0">
+              <img src="assets/img/good.png" *ngIf="total > 35.5 && total < 45.5" >
+              <img src="assets/img/ok.png" *ngIf="total > 45.5 && total < 70 ">
+          </td></tr>
+          </table>
+       </div>
+     
 
 </ion-content>

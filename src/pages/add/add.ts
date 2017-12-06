@@ -48,4 +48,9 @@ export class AddPage {
     toast.present();
   }
 
+  public round(value){
+    if (!value) return null;
+    return Number.parseFloat(value.toFixed(4));
+  }
+
 }

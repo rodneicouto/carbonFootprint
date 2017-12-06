@@ -11,6 +11,7 @@ import { FilterPipe } from '../pipes/filter.pipe';
 import { AddPage } from '../pages/add/add';
 import { ShoppingCarProvider } from '../providers/shopping-car/shopping-car';
 import { TotalPage } from '../pages/total/total';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TotalPage } from '../pages/total/total';
   ],
   imports: [
     BrowserModule,
+    ComponentsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

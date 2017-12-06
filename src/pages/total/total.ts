@@ -44,4 +44,9 @@ export class TotalPage {
     this.ngOnInit();
   }
 
+  public round(value){
+    if (!value) return null;
+    return Number.parseFloat(value.toFixed(4));
+  }
+
 }

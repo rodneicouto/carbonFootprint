@@ -1,0 +1,10 @@
+<!-- Generated template for the ProgressBarComponent component -->
+<div class="progress-content">
+  <div class="progress-outer">
+      <div class="progress-inner" [style.width]="percent() + '%'" [class.nopadding]="percent() == 0">
+      </div>
+  </div>
+  <div class="progress-indicator">
+      {{progressUserPresentable()}} g/co2
+  </div>
+</div>
